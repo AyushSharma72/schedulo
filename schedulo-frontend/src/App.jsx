@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <AppRouter />
-      {/* <div className="text-red-700 p-10">tailwind test </div> */}
+      <div className="text-primary p-10 font-bold">tailwind test</div>
     </>
   );
 }
