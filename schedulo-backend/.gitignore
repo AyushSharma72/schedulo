@@ -1,0 +1,31 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Byte-compiled files
+*.so
+
+# Editor / OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Local logs
+*.log
+
+# PyInstaller build artifacts
+build/
+dist/
+
+# Coverage
+htmlcov/
+.coverage
