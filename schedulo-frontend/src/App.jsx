@@ -1,11 +1,12 @@
 import "./App.css";
 import AppRouter from "./Router";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
+    <Navbar/>
       <AppRouter />
-      <div className="text-primary p-10 font-bold">tailwind test</div>
     </>
   );
 }
