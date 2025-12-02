@@ -52,8 +52,7 @@ export function useRegisterForm(initialUserType = 'candidate') {
       const dataToSubmit = { userType, ...formData };
       console.log('Registration data:', dataToSubmit);
       alert(
-        `${
-          userType === 'candidate' ? 'Candidate' : 'Recruiter'
+        `${userType === 'candidate' ? 'Candidate' : 'Recruiter'
         } registration successful! Check console for data.`
       );
     } else {

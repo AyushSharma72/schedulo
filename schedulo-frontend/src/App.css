@@ -1,2 +1,107 @@
 @import "tailwindcss";
-@import "./theme/colors.css";
+
+/* PRIMARY BRAND COLORS — PURPLE THEME */
+.bg-primary {
+  @apply bg-purple-600;
+}
+.bg-primary-dark {
+  @apply bg-purple-700;
+}
+.bg-primary-light {
+  @apply bg-purple-200;
+}
+.bg-primary-lighter {
+  @apply bg-purple-100;
+}
+
+.text-primary {
+  @apply text-purple-600;
+}
+.text-primary-light {
+  @apply text-purple-300;
+}
+
+/* PRIMARY GRADIENTS */
+.gradient-primary {
+  @apply bg-gradient-to-br from-purple-50 to-white;
+}
+.gradient-primary-cta {
+  @apply bg-gradient-to-r from-purple-600 to-purple-700;
+}
+.gradient-primary-box {
+  @apply bg-gradient-to-br from-purple-200 to-purple-100;
+}
+
+/* TEXT SYSTEM */
+.text-base-strong {
+  @apply text-slate-900;
+}
+.text-base {
+  @apply text-slate-600;
+}
+.text-base-soft {
+  @apply text-slate-500;
+}
+.text-base-light {
+  @apply text-slate-400;
+}
+.text-base-faint {
+  @apply text-slate-300;
+}
+
+/* SURFACE COLORS */
+.bg-surface {
+  @apply bg-purple-50;
+}
+.bg-surface-dark {
+  @apply bg-slate-900;
+}
+
+/* BORDERS */
+.border-surface {
+  @apply border-purple-200;
+}
+.border-surface-dark {
+  @apply border-purple-700;
+}
+
+.bg-background {
+  @apply bg-white;
+}
+.text-on-background {
+  @apply text-white;
+}
+.border-on-background {
+  @apply border-white;
+}
+
+.border-muted {
+  @apply border-purple-100;
+}
+
+/* SUCCESS / STATUS */
+.text-success {
+  @apply text-green-700;
+}
+.text-success-soft {
+  @apply text-green-500;
+}
+.border-success-soft {
+  @apply border-green-100;
+}
+
+/* BUTTONS */
+.btn-primary {
+  @apply px-8 py-3 rounded-lg transition font-semibold flex items-center justify-center gap-2 cursor-pointer ;
+}
+
+.btn-secondary {
+  @apply bg-white text-purple-700 rounded-md text-sm font-semibold 
+         hover:bg-purple-50 transition-colors border-2 py-2 px-3 
+         border-purple-200 cursor-pointer;
+}
+
+/* MISC */
+.bg-muted {
+  @apply bg-purple-50;
+}

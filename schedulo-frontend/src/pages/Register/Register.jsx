@@ -1,11 +1,12 @@
-import React from 'react';
-import { useRegisterForm } from '../../hooks/useRegisterForm';
-import UserTypeSelector from '../../components/auth/UserTypeSelector';
-import TermsCheckbox from '../../components/auth/TermsCheckbox';
-import GoogleLoginButton from '../../components/auth/GoogleLoginButton';
-import Input from '../../components/form/Input';
-import CandidateFields from './CandidateFields';
-import RecruiterFields from './RecruiterFields';
+import React from "react";
+import { useRegisterForm } from "../../hooks/useRegisterForm";
+import UserTypeSelector from "../../components/auth/UserTypeSelector";
+import TermsCheckbox from "../../components/auth/TermsCheckbox";
+import GoogleLoginButton from "../../components/auth/GoogleLoginButton";
+import Input from "../../components/form/Input";
+import CandidateFields from "./CandidateFields";
+import RecruiterFields from "./RecruiterFields";
+import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
 
 export default function Register() {
   const {
@@ -16,7 +17,7 @@ export default function Register() {
     handleChange,
     handleSubmit,
     handleGoogleSignup,
-  } = useRegisterForm('candidate');
+  } = useRegisterForm("candidate");
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
@@ -106,7 +107,7 @@ export default function Register() {
               required
             />
 
-            {userType === 'candidate' && (
+            {userType === "candidate" && (
               <CandidateFields
                 formData={formData}
                 errors={errors}
@@ -114,7 +115,7 @@ export default function Register() {
               />
             )}
 
-            {userType === 'recruiter' && (
+            {userType === "recruiter" && (
               <RecruiterFields
                 formData={formData}
                 errors={errors}
@@ -122,19 +123,18 @@ export default function Register() {
               />
             )}
           </div>
-
           <TermsCheckbox
             checked={formData.agreeToTerms}
             onChange={handleChange}
             error={errors.agreeToTerms}
           />
-
-          <button
+          {/* <button
             type="submit"
             className="w-full py-3 bg-slate-900 text-white rounded-md text-sm font-semibold hover:bg-slate-800 transition-colors"
           >
             Create Account
-          </button>
+          </button> */}
+          <PrimaryButton text="Create Account" />
         </form>
 
         <div className="relative my-6">
@@ -142,14 +142,16 @@ export default function Register() {
             <div className="w-full border-t border-gray-200"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="bg-white px-4 text-gray-400">or continue with</span>
+            <span className="bg-white px-4 text-gray-400">
+              or continue with
+            </span>
           </div>
         </div>
 
         <GoogleLoginButton onClick={handleGoogleSignup} />
 
         <div className="text-center mt-6 text-gray-500 text-sm">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <button
             type="button"
             className="text-slate-900 font-semibold hover:underline"
