@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends
-from app.api.v2.schemas.auth import RegisterRequest, LoginRequest, TokenResponse , ForgotPassword
+from app.api.v1.schemas.auth import RegisterRequest, LoginRequest, TokenResponse , ForgotPassword
 from app.services import user_service
 from app.core import security
+
 from pymongo.errors import DuplicateKeyError
 import random
 
@@ -86,3 +87,30 @@ async def forgot_password(payload: ForgotPassword):
         return "Email sent"
     else:
         return "Email Not found , Resubmit Email"
+
+@router.post(
+    "/notifications/send-reminders",
+    summary="Send reminder emails for upcoming interviews",
+    description="Mock implementation: finds interviews starting within 1 hour and sends reminder emails to HR and candidates."
+)
+async def send_reminder_notifications():
+    now = datetime.utcnow()
+    interview_start = now + timedelta(minutes=45)
+
+    mock_interview = {
+        "id": 10,
+        "candidateEmail": "candidate@example.com",
+        "hrEmail": "hr@example.com",
+        "start": interview_start
+    }
+
+    if now <= interview_start <= now + timedelta(hours=1):
+        print(f"Sending reminder to {mock_interview['candidateEmail']} and {mock_interview['hrEmail']}")
+
+        return {
+            "message": "Reminder emails sent",
+            "interviewId": mock_interview["id"],
+            "timeUntilStartMinutes": 45
+        }
+
+    return {"message": "No interviews within the next hour"}
