@@ -26,3 +26,8 @@ async def startup_event():
 @app.get("/")
 async def root():
     return {"message": "Schedulo backend running"}
+
+@app.get("/test")
+async def test():
+    return {"message": "Test route works"}
+
