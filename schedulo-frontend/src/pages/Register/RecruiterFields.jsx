@@ -1,6 +1,6 @@
-import React from 'react';
-import Input from '../../components/form/Input';
-import Select from '../../components/form/Select';
+import React from "react";
+import Input from "../../components/form/Input";
+import Select from "../../components/form/Select";
 
 export default function RecruiterFields({ formData, errors, onChange }) {
   return (
@@ -44,7 +44,7 @@ export default function RecruiterFields({ formData, errors, onChange }) {
         name="position"
         value={formData.position}
         onChange={onChange}
-        placeholder="e.g., HR Manager, Talent Acquisition"
+        placeholder="HR Manager"
         error={errors.position}
         required
       />
@@ -54,7 +54,7 @@ export default function RecruiterFields({ formData, errors, onChange }) {
         name="department"
         value={formData.department}
         onChange={onChange}
-        placeholder="e.g., Human Resources"
+        placeholder="Human Resources"
         error={errors.department}
         required
       />

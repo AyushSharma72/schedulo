@@ -4,15 +4,20 @@ import Checkbox from "../../components/form/Checkbox";
 import GoogleLoginButton from "../../components/auth/GoogleLoginButton";
 import { useLoginForm } from "../../hooks/useLoginForm";
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
   const navigate = useNavigate();
   const { formData, errors, handleChange, handleSubmit, handleGoogleLogin } =
     useLoginForm();
 
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex items-center justify-center gradient-primary p-6">
       <div className="w-full max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 justify-between">
+        {/* Left illustration */}
         <div className="hidden lg:flex justify-center flex-1">
           <img
             src="/login.svg"
@@ -21,8 +26,8 @@ export default function Login() {
           />
         </div>
 
-        <div className="bg-background border border-surface shadow-xl rounded-2xl p-8  w-full max-w-xl flex-1 backdrop-blur-sm">
-          {/* Header */}
+        {/* Right form card */}
+        <div className="bg-background border border-surface shadow-xl rounded-2xl p-8 w-full max-w-xl flex-1 backdrop-blur-sm">
           <h1 className="text-center text-3xl font-semibold text-base-strong mb-2">
             Welcome back
           </h1>
@@ -30,8 +35,8 @@ export default function Login() {
             Sign in to your account to continue
           </p>
 
-          {/* FORM */}
           <form onSubmit={handleSubmit} className="space-y-5">
+            {/* EMAIL */}
             <Input
               label="Email address"
               name="email"
@@ -43,15 +48,25 @@ export default function Login() {
               required
             />
 
+         
             <Input
               label="Password"
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={formData.password}
               onChange={handleChange}
               placeholder="Enter your password"
               error={errors.password}
               required
+              rightElement={
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="text-base-light hover:text-primary transition"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              }
             />
 
             <div className="flex justify-between items-center mb-1">
@@ -87,10 +102,8 @@ export default function Login() {
             </div>
           </div>
 
-          {/* Google Login */}
           <GoogleLoginButton onClick={handleGoogleLogin} />
 
-          {/* Register */}
           <div className="text-center mt-6 text-base-soft text-sm">
             Don't have an account?{" "}
             <button

@@ -1,7 +1,6 @@
-import React from 'react';
-import Input from '../../components/form/Input';
-import Select from '../../components/form/Select';
-import FileUpload from '../../components/form/FileUpload';
+import React from "react";
+import Input from "../../components/form/Input";
+import Select from "../../components/form/Select";
 
 export default function CandidateFields({ formData, errors, onChange }) {
   return (

@@ -92,13 +92,20 @@
 
 /* BUTTONS */
 .btn-primary {
-  @apply px-8 py-3 rounded-lg transition font-semibold flex items-center justify-center gap-2 cursor-pointer ;
+  @apply px-8 py-3 rounded-lg transition font-semibold flex items-center justify-center gap-2 cursor-pointer;
 }
 
 .btn-secondary {
-  @apply bg-white text-purple-700 rounded-md text-sm font-semibold 
-         hover:bg-purple-50 transition-colors border-2 py-2 px-3 
-         border-purple-200 cursor-pointer;
+  @apply bg-white 
+    text-purple-700 
+    border-2 border-purple-200
+    rounded-lg
+    text-sm font-semibold
+    py-3 px-5
+    flex items-center justify-center gap-2
+    cursor-pointer
+    transition-colors
+    hover:bg-purple-50;
 }
 
 /* MISC */
