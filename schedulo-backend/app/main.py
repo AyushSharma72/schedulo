@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v2.router import router as api_v2_router   
+from app.api.v1.router import router as api_v1_router   
 from app.db.database import create_indexes
 
 app = FastAPI(title="Schedulo Backend")
@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 # Add API versioning
-app.include_router(api_v2_router, prefix="/api/v2")
+app.include_router(api_v1_router, prefix="/api/v1")
 
 # Startup tasks
 @app.on_event("startup")
@@ -26,3 +26,8 @@ async def startup_event():
 @app.get("/")
 async def root():
     return {"message": "Schedulo backend running"}
+
+@app.get("/test")
+async def test():
+    return {"message": "Test route works"}
+
