@@ -25,7 +25,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-16 relative bg-gradient-to-b from-primary/5 to-background overflow-hidden">
+    <section className="py-16 relative bg-gradient-to-b from-primary/5 to-background overflow-hidden ">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-base-strong mb-14">
           How Schedulo <span className="text-primary"> Works ?</span>
@@ -44,9 +44,9 @@ export default function HowItWorks() {
               >
                 <div
                   id={`${item.id}-card`}
-                  className="bg-background/80 backdrop-blur-xl border border-surface p-6 rounded-2xl shadow-lg w-full md:w-[60%] hover:shadow-primary/30"
+                  className="bg-background/80 backdrop-blur-xl border border-surface p-6 rounded-2xl shadow-lg w-full md:w-[60%] hover:shadow-primary/30 gradient-primary"
                 >
-                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold mb-3 shadow-inner">
+                  <div className="w-12 h-12 bg-primary/10 text-base-faint rounded-xl flex items-center justify-center font-bold mb-3 shadow-inner bg-primary">
                     {index + 1}
                   </div>
 
